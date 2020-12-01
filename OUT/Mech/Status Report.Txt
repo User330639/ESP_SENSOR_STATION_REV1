@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 11:14:56 On 01.12.2020
+
+Output: Export STEP
+Type  : ExportSTEP
+From  : Variant [[No Variations]] of PCB Document [ESP_SENSOR_STATION_REV1.PcbDoc]
+   Generated File[ESP_SENSOR_STATION_REV1.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:15:05 On 01.12.2020

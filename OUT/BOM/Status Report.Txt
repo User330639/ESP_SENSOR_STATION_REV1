@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 11:15:18 On 01.12.2020
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [ESP_SENSOR_STATION_REV1.PrjPcb]
+   Generated File[Bill of Materials-ESP_SENSOR_STATION_REV1.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:15:20 On 01.12.2020

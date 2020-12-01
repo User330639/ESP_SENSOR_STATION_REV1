@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [ESP_SENSOR_STATION_REV1.PcbDoc]
+   Generated File[ESP_SENSOR_STATION_REV1-Plated.TXT]
+   Generated File[ESP_SENSOR_STATION_REV1-NonPlated.TXT]
+   Generated File[ESP_SENSOR_STATION_REV1.LDP]
+   Generated File[ESP_SENSOR_STATION_REV1.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:19:53 On 01.12.2020

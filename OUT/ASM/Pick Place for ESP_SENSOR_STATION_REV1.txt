@@ -1,0 +1,96 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\Projects\ESP_SENSOR_STATION_REV1\OUT\ASM\Pick Place for ESP_SENSOR_STATION_REV1.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       01.12.20
+Time:       11:15
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+Designator Footprint                Center-X(mm) Center-Y(mm) Rotation Layer    
+TP2        5011                     47.6000      13.1000      90       TopLayer 
+TP1        5011                     41.1000      13.1000      90       TopLayer 
+C18        CAPC1608X08N             38.6000      75.2000      0        TopLayer 
+C17        CAPC1608X08N             48.9000      79.8750      0        TopLayer 
+XS3        B6B-ZR-SM4-TF(LF)(SN)    88.1250      37.7250      180      TopLayer 
+R36        RESC1608X06N             31.3250      27.2250      270      TopLayer 
+FB2        INDC1608X08N             34.2750      30.1750      90       TopLayer 
+XS2        1734035-1                30.8000      76.4500      180      TopLayer 
+XS1        300-031-12               107.1000     66.8000      90       TopLayer 
+VT5        SOT95P237X111-3N         15.0000      8.4500       360      TopLayer 
+VT4        SOT95P237X111-3N         15.0000      4.9500       360      TopLayer 
+VT3        SOT95P237X111-3N         13.8000      36.7000      270      TopLayer 
+VT2        SOT65P210X110-6N         15.2000      66.6990      90       TopLayer 
+VT1        SOT95P237X111-3N         87.8750      42.9750      270      TopLayer 
+VD3        SOT190P237X122-4N        31.1500      70.4500      180      TopLayer 
+VD2        GNL-3012ED               34.7000      4.9500       360      TopLayer 
+VD1        GNL-3012GD               27.7000      4.9500       360      TopLayer 
+RV3        B72214S0251K101          100.0000     66.5000      270      TopLayer 
+RV2        B72214S0251K101          95.0000      66.5000      270      TopLayer 
+RV1        B72214S0251K101          90.0000      66.5000      90       TopLayer 
+R35        RESC1608X06N             17.2500      66.9740      270      TopLayer 
+R34        RESC1608X06N             38.5500      73.7500      180      TopLayer 
+R33        RESC1608X06N             26.8500      52.8240      180      TopLayer 
+R32        RESC1608X06N             26.8500      50.8240      180      TopLayer 
+R31        RESC1608X06N             14.7500      41.2240      90       TopLayer 
+R30        RESC1608X06N             13.1500      66.9740      90       TopLayer 
+R29        RESC1608X06N             19.7000      8.4500       360      TopLayer 
+R28        RESC1608X06N             19.7000      4.9500       360      TopLayer 
+R27        RESC1608X06N             19.7000      36.5750      90       TopLayer 
+R26        RESC1608X06N             16.2750      36.5750      90       TopLayer 
+R25        RESC1608X06N             15.6750      78.6890      270      TopLayer 
+R24        RESC1608X06N             21.7250      66.1750      360      TopLayer 
+R23        RESC1608X06N             8.7500       62.4240      90       TopLayer 
+R22        RESC1608X06N             10.7500      62.4240      90       TopLayer 
+R21        RESC1608X06N             84.4750      43.1500      180      TopLayer 
+R20        RESC1608X06N             84.4750      41.7500      180      TopLayer 
+R19        RESC1608X06N             20.7500      62.4240      90       TopLayer 
+R18        RESC1608X06N             91.1250      43.3000      0        TopLayer 
+R17        RESC1608X06N             16.7500      41.2240      270      TopLayer 
+R16        RESC1608X06N             14.7500      62.4240      270      TopLayer 
+R15        RESC1608X06N             48.0250      39.7500      360      TopLayer 
+R14        RESC1608X06N             12.7500      62.4240      270      TopLayer 
+R13        RESC1608X06N             20.7500      41.2240      270      TopLayer 
+R12        RESC1608X06N             33.5750      32.4250      360      TopLayer 
+R11        RESC1608X06N             33.5750      33.8750      360      TopLayer 
+R10        RESC1608X06N             46.3000      32.7750      90       TopLayer 
+R9         RESC1608X06N             44.9000      32.7750      90       TopLayer 
+R8         RESC1608X06N             48.9000      78.3750      0        TopLayer 
+R7         RESC1608X06N             38.6000      61.3250      360      TopLayer 
+R6         RESC1608X06N             22.9500      61.6740      180      TopLayer 
+R5         RESC1608X06N             8.7500       41.2240      90       TopLayer 
+R4         RESC1608X06N             12.7500      41.2240      90       TopLayer 
+R3         RESC1608X06N             18.7500      62.4240      270      TopLayer 
+R2         RESC1608X06N             41.3250      44.7250      90       TopLayer 
+R1         RESC1608X06N             16.7500      62.4240      270      TopLayer 
+Q1         PKM22EPPH4007-B0         18.8000      23.4750      0        TopLayer 
+FB1        INDC1608X08N             42.1250      40.9250      360      TopLayer 
+DD2        QFN50P500X500X100_HS-29N 14.8000      74.1640      180      TopLayer 
+DD1        ESP-12E                  16.5000      51.8240      90       TopLayer 
+DA8        MP-5                     68.1250      42.0500      90       TopLayer 
+DA7        SHT1x                    36.2250      23.3750      270      TopLayer 
+DA6        MPXHZ6400AC6T1           46.8650      25.4310      270      TopLayer 
+DA5        SOT230P700X180-4N        36.5500      54.1000      270      TopLayer 
+DA4        TSOP65P640X120-8N        38.2500      65.9250      90       TopLayer 
+DA3        IRM-05                   64.5500      68.1250      360      TopLayer 
+DA2        TSOP65P640X120-16N       52.2750      40.3750      90       TopLayer 
+DA1        GP2Y1010AU0F             76.1250      18.1750      180      TopLayer 
+C16        CAPC1608X08N             91.1250      41.8000      360      TopLayer 
+C15        CAPC1608X08N             33.5200      27.9250      360      TopLayer 
+C14        CAPC1608X08N             48.9000      32.0250      180      TopLayer 
+C13        CAPC1608X08N             17.1250      78.7390      270      TopLayer 
+C12        CAPC1608X08N             35.7000      68.3250      90       TopLayer 
+C11        CAPC1608X08N             32.3000      55.4000      270      TopLayer 
+C10        CAPC1608X08N             38.5500      70.5750      180      TopLayer 
+C9         CAPC1608X08N             35.0500      59.1000      180      TopLayer 
+C8         CAPC1608X08N             7.2500       41.2240      90       TopLayer 
+C7         CAPC1608X08N             42.1250      42.4750      0        TopLayer 
+C6         CAPC1608X08N             50.1000      45.0000      360      TopLayer 
+C5         CAPC1608X08N             53.1000      45.1250      180      TopLayer 
+C4         CAPC1608X08N             19.3750      76.4890      180      TopLayer 
+C3         CAPC1608X08N             35.7000      65.3250      90       TopLayer 
+C2         CAPC1608X08N             22.7500      41.1740      90       TopLayer 
+C1         CAPC1608X08N             80.3750      39.6750      360      TopLayer 
