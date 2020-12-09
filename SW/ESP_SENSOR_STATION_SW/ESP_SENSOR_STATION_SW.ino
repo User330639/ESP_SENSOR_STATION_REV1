@@ -145,11 +145,14 @@ void setup()
   Serial.println();
   
   /* AD7792 reset, setup and internal calibration */
-  Serial.print("Initializing AD7792... ");
+  Serial.println("Initializing AD7792");
   if (AD7792_Init() == 1)
   {
+    Serial.println("Resetting AD7792");
     AD7792_Reset();
+    Serial.println("Setting gain... ");
     AD7792_SetGain(AD7792_GAIN_1);
+    Serial.println("Setting internal reference");
     AD7792_SetIntReference(AD7792_REFSEL_INT);
   
     AD7792_SetMode(AD7792_MODE_CAL_INT_ZERO);
@@ -168,19 +171,19 @@ void setup()
                             AD7792_IEXCEN(AD7792_EN_IXCEN_10uA) | AD7792_DIR_IEXC1_IEXC2_IOUT2,
                             1, 1);
     _ad7792_present = true;
-    Serial.println("SUCESS");
+    Serial.println("AD7792 init: SUCESS");
   }
   else
   {
     _ad7792_present = false;
-    Serial.println("FAIL");
+    Serial.println("AD7792 init: FAIL");
   }
-
+  Serial.println();
   /* When SHT1x is created the driver only initializes GPIO */
   /* Read/write to the status register is performed to detect its actual presence */
   /* The 6th bit in the status register is read only and can have any value */
   /* Hence, feedback can either be equal to 1 or to (1 | (1 << 6)) */
-  Serial.print("Initializing SHT10... ");
+  Serial.println("Initializing SHT10");
   SHT1x.writeStatusReg(1);
   unsigned char feedback = SHT1x.readStatusReg();
   if ((feedback == 1) || (feedback == (1 | 1 << 6)))
@@ -193,7 +196,7 @@ void setup()
     _sht10_present = false;
     Serial.println("FAIL");
   }
-
+  Serial.println();
   /* Creates the access point and assigns callbacks */
   /* Sending a command to the server looks like 192.168.4.1/takeData */
   /* If there is no command, it is assumed to be empty (/) */

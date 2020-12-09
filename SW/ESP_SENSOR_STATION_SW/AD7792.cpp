@@ -56,18 +56,17 @@
 *******************************************************************************/
 unsigned char AD7792_Init(void)
 { 
-  unsigned char status = 0x1;
+	unsigned char status = 0x1;
     
-  if (SPI_Init(0, 1000000, 1, 1) == 0)
-  {
-    status = 0x0;
-    return status;
-  }
-  if((AD7792_GetRegisterValue(AD7792_REG_ID, 1, 1) & 0x0F) != AD7792_ID)
+	if (SPI_Init(0, 1000000, 1, 1) == 0)
 	{
-    status = 0x0;
+		status = 0x0;
+		return status;
 	}
-    
+	if((AD7792_GetRegisterValue(AD7792_REG_ID, 1, 1) & 0x0F) != AD7792_ID)
+	{
+		status = 0x0;
+	}
 	return(status);
 }
 
