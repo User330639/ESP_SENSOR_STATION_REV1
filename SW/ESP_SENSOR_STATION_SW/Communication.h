@@ -46,11 +46,14 @@
 /* GPIO Definitions                                                           */
 /******************************************************************************/
 
-#define ADI_PAR_CS_PIN        		8
+#define ADI_PAR_CS_PIN        		15
+#define ADI_PAR_MOSI_PIN          13
+#define ADI_PAR_MISO_PIN          12
+#define ADI_PAR_SCK_PIN           14
 #define ADI_PART_CS_PIN_OUT   		pinMode(ADI_PAR_CS_PIN, OUTPUT)
-#define ADI_PART_CS_LOW        		digitalWrite(ADI_PAR_CS_PIN, LOW)
-#define ADI_PART_CS_HIGH       		digitalWrite(ADI_PAR_CS_PIN, HIGH)
-#define GPIO1_PIN              		6
+#define ADI_PART_CS_LOW           digitalWrite(ADI_PAR_CS_PIN, LOW)
+#define ADI_PART_CS_HIGH          digitalWrite(ADI_PAR_CS_PIN, HIGH)
+#define GPIO1_PIN              		12
 #define GPIO1_STATE            		digitalRead(GPIO1_PIN)
 
 /******************************************************************************/

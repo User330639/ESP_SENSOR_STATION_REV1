@@ -28,15 +28,15 @@ float SHT1x::readTemperature(const TempUnit unit, const bool checkSum)
   float _temperature;      // Temperature derived from raw value
 
   // Conversion coefficients from SHT15 datasheet
-  constexpr  float D1 = -40.0;  // for 14 Bit @ 5V
+  constexpr  float D1 = -39.66;  // for 14 Bit @ 5V
   float D2;
   if (unit == TempUnit::C)
   {
-    D2 = 0.01;
+    D2 = 0.04;
   }
   else if (unit == TempUnit::F) 
   {
-    D2 = 0.018;
+    D2 = 0.072;
   }
 
   // Fetch raw value
@@ -76,10 +76,10 @@ float SHT1x::readHumidity(const bool checkSum)
 
   // Conversion coefficients from SHT15 datasheet
   constexpr  float C1 = -4.0;       // for 12 Bit
-  constexpr  float C2 =  0.0405;    // for 12 Bit
-  constexpr  float C3 = -0.0000028; // for 12 Bit
+  constexpr  float C2 =  0.6480;    // for 12 Bit
+  constexpr  float C3 = -7.2E-4; // for 12 Bit
   constexpr  float T1 =  0.01;      // for 14 Bit @ 5V
-  constexpr  float T2 =  0.00008;   // for 14 Bit @ 5V
+  constexpr  float T2 =  0.00128;   // for 14 Bit @ 5V
 
   // Command to send to the SHT1x to request humidity
   constexpr uint8_t _gHumidCmd = 0b00000101;

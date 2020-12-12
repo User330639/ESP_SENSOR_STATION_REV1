@@ -106,7 +106,6 @@ unsigned long AD7792_GetRegisterValue(unsigned char regAddress,
   {
     receivedData = (receivedData << 8) + data[i];
   }
-  
   return (receivedData);
 }
 /***************************************************************************//**

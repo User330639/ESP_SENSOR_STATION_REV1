@@ -44,8 +44,9 @@
 /* Include Files                                                              */
 /******************************************************************************/
 #include "Communication.h"
-#include <SPI.h>
+#include "SoftSPI.h"
 
+static SoftSPI mySPI(ADI_PAR_MOSI_PIN, ADI_PAR_MISO_PIN, ADI_PAR_SCK_PIN);
 /***************************************************************************//**
  * @brief Initializes the SPI communication peripheral.
  *
@@ -70,47 +71,42 @@ unsigned char SPI_Init(unsigned char lsbFirst,
                        unsigned char clockPol,
                        unsigned char clockPha)
 {
-	Serial.println("Initializing SPI peripheral");
 	if (lsbFirst) 
 	{
-		Serial.println("Runtime error while initializing SPI peripheral");
 		return 0; // HSPI only supports MSB first
 	}
 	
 	auto spi_mode = SPI_MODE0;
 	const uint8_t mode_id = (clockPol << 1) | clockPha;
-	
+
+  ADI_PART_CS_PIN_OUT;
+  ADI_PART_CS_HIGH;
+  
 	switch (mode_id)
 	{
 		default:
 		case 0:
 		{
-			Serial.println("SPI mode: 0");
 			break;
 		}
 		case 1:
 		{
 			spi_mode = SPI_MODE1;
-			Serial.println("SPI mode: 1");
 			break;
 		}
 		case 2:
 		{
 			spi_mode = SPI_MODE2;
-			Serial.println("SPI mode: 2");
 			break;
 		}
 		case 3:
 		{
 			spi_mode = SPI_MODE3;
-			Serial.println("SPI mode: 3");
 			break;
 		}
 	}
-
-	SPI.beginTransaction(SPISettings(clockFreq, MSBFIRST, spi_mode));
-	ADI_PART_CS_PIN_OUT;
-	Serial.println("SPI peripheral initialization complete");
+  mySPI.begin();
+	mySPI.setDataMode(spi_mode);
 	return 1;
 }
 
@@ -127,9 +123,12 @@ unsigned char SPI_Init(unsigned char lsbFirst,
 unsigned char SPI_Write(unsigned char* data,
                         unsigned char bytesNumber)
 {
-	int SCNumber = data[0];
 	ADI_PART_CS_LOW;
-	SPI.transfer(&data[1], bytesNumber);
+  int SCNumber = data[0];
+  for(int i = 1; i < bytesNumber + 1; i ++)
+  {
+    mySPI.transfer(data[i]);
+  }
 	if (SCNumber == 0x1) 
 	{
 		ADI_PART_CS_HIGH;
@@ -152,12 +151,11 @@ unsigned char SPI_Write(unsigned char* data,
 unsigned char SPI_Read(unsigned char* data,
                        unsigned char bytesNumber)
 {
-	int i = 0;
 	ADI_PART_CS_LOW;
 	int SCNumber = data[0];
-	for(i = 1; i < bytesNumber + 1; i ++)
+	for(int i = 1; i < bytesNumber + 1; i ++)
 	{
-		data[i-1] = SPI.transfer(data[i]);
+		data[i-1] = mySPI.transfer(data[i]);
 	}
 	if (SCNumber == 0x1) 
 	{
