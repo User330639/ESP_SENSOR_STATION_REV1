@@ -5,9 +5,6 @@
 #include "AD7792.h"
 #include "SHT1x.h"
 
-/* Uncomment this if ESP uses QSPI in dual mode to enable alarm LEDS */
-//#define ESP_QSPI_DIO
-
 /* ESP creates WiFi network with this SSID password combination */
 #define _SSID "TEST"
 #define _PASS "12345678"
@@ -81,6 +78,8 @@ float hum  = std::numeric_limits<float>::quiet_NaN();
 float prs  = std::numeric_limits<float>::quiet_NaN();
 float c3h8 = std::numeric_limits<float>::quiet_NaN();
 float dust = std::numeric_limits<float>::quiet_NaN();
+
+static const FlashMode_t ideMode = ESP.getFlashChipMode();
 /* ------------------------------------------------------------ */
 
 void dataUpdater(uint32_t deltaTime);
@@ -201,9 +200,10 @@ void alarmOn(uint32_t deltaTime)
   BUZZER_OFF;
   if (!ALARM_CONDITION)
   {
-#ifdef ESP_QSPI_DIO
-    digitalWrite(LED1_GPIO, LOW);
-#endif
+    if (ideMode == FM_DIO || ideMode == FM_DOUT)
+    {
+      digitalWrite(LED1_GPIO, LOW);
+    }
     taskManager.StopTask(&taskAlarmOn);
   }
 }
@@ -213,15 +213,18 @@ void setup()
   Serial.begin(115200);
   Serial.println();
 
+  Serial.printf("Flash ide mode:  %s\n", (ideMode == FM_QIO ? "QIO" : ideMode == FM_QOUT ? "QOUT" : ideMode == FM_DIO ? "DIO" : ideMode == FM_DOUT ? "DOUT" : "UNKNOWN"));
+  
   Serial.print("Initializing GPIO... ");
   pinMode(BUZZER_GPIO, OUTPUT);
   analogWrite(BUZZER_GPIO, 0);
-#ifdef ESP_QSPI_DIO
-  pinMode(LED0_GPIO, OUTPUT);
-  pinMode(LED1_GPIO, OUTPUT);
-  digitalWrite(LED0_GPIO, HIGH);
-  digitalWrite(LED1_GPIO, LOW);
-#endif
+  if (ideMode == FM_DIO || ideMode == FM_DOUT)
+  {
+    pinMode(LED0_GPIO, OUTPUT);
+    pinMode(LED1_GPIO, OUTPUT);
+    digitalWrite(LED0_GPIO, HIGH);
+    digitalWrite(LED1_GPIO, LOW);
+  }
   pinMode(DUST_SNS_GPIO, OUTPUT);
   digitalWrite(DUST_SNS_GPIO, LOW);
   Serial.println("SUCESS");
