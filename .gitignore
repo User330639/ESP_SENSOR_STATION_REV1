@@ -1,3 +1,11 @@
+DOCS
+
+#Mech data
+*.grb
+*.step
+*.stp
+*.3mf
+
 # Various Altium files
 *.PrjPCBStructure
 *.SchDocPreview
@@ -465,3 +473,6 @@ avr-toolchain-*.zip
 manifest.mf
 nbbuild.xml
 nbproject
+
+#Simulation folder
+SIM
